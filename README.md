@@ -6,8 +6,10 @@ A classic Tetris implementation in Rust featuring Game Boy-inspired aesthetics
 
 This project demonstrates clean software architecture principles in game development, with complete separation of game logic, rendering, and input handling. The codebase is structured for maintainability, testability, and cross-platform deployment.
 
-## Features
+## Game Play
+  ![Tetris Demo](assets/tetris-demo.gif)
 
+## Features
 - Classic Tetris gameplay mechanics
 - Seven-bag randomizer for fair piece distribution
 - Ghost piece preview system
@@ -20,22 +22,30 @@ This project demonstrates clean software architecture principles in game develop
 ### Project Structure
 
 ```
-src/
-├── main.rs              # Application entry point and game loop
-├── lib.rs               # Public library interface
-├── config.rs            # Configuration constants
-├── input.rs             # Input handling abstraction
-├── renderer.rs          # Rendering system
-├── game/
-│   ├── mod.rs          # Game module interface
-│   ├── board.rs        # Board state and collision detection
-│   ├── state.rs        # Game state management
-│   └── scoring.rs      # Scoring and level progression
-└── tetromino/
-    ├── mod.rs          # Tetromino module interface
-    ├── types.rs        # Piece type definitions
-    ├── piece.rs        # Piece behavior and transformations
-    └── bag.rs          # Seven-bag randomization system
+rust-tetris/
+├── assets/
+│   ├── tetris-demo.gif    # Demo gameplay animation
+│   └── tetris-demo.mov    # Demo video file
+├── src/
+│   ├── main.rs            # Application entry point and game loop
+│   ├── lib.rs             # Public library interface
+│   ├── config.rs          # Configuration constants
+│   ├── input.rs           # Input handling abstraction
+│   ├── renderer.rs        # Rendering system
+│   ├── game/
+│   │   ├── mod.rs         # Game module interface
+│   │   ├── board.rs       # Board state and collision detection
+│   │   ├── state.rs       # Game state management
+│   │   └── scoring.rs     # Scoring and level progression
+│   └── tetromino/
+│       ├── mod.rs         # Tetromino module interface
+│       ├── types.rs       # Piece type definitions
+│       ├── piece.rs       # Piece behavior and transformations
+│       └── bag.rs         # Seven-bag randomization system
+├── target/                # Compiled binaries and build artifacts
+├── Cargo.toml             # Project dependencies and metadata
+├── Cargo.lock             # Dependency lock file
+└── README.md              # Project documentation
 ```
 
 ### Design Principles
